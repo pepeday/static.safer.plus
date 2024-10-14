@@ -7,26 +7,19 @@
 </head>
 <body>
   <h1>Subscribe to Push Notifications</h1>
+  
+  <!-- Button that the user must click to subscribe to notifications -->
+  <button id="subscribeButton">Enable Notifications</button>
 
   <script>
-    // Function to extract user_id from the URL parameters
-    function getUserIdFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('user_id');  // Returns the value of user_id from the URL
-    }
+    document.getElementById('subscribeButton').addEventListener('click', function() {
+      // Request notification permission only after user clicks the button
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          console.log('Notification permission granted.');
 
-    const user_id = getUserIdFromURL();  // Get the user_id from the URL
-
-    if (user_id) {
-      console.log('User ID:', user_id);  // Debugging: ensure user_id is captured
-
-      if ('serviceWorker' in navigator && 'Notification' in window) {
-        // Request notification permission from the user
-        Notification.requestPermission().then(function(permission) {
-          if (permission === 'granted') {
-            console.log('Notification permission granted.');
-
-            // Register the service worker after permission is granted
+          // Register the service worker after permission is granted
+          if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('https://static.safer.plus/sw.js')
               .then(function(registration) {
                 console.log('Service Worker registered successfully.');
@@ -49,11 +42,9 @@
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'
-                    // Uncomment the following line if your flow requires authorization
-                    //'Authorization': 'Bearer YOUR_DIRECTUS_API_TOKEN'
                   },
                   body: JSON.stringify({
-                    user_id: user_id,  // Use the user_id from the URL
+                    user_id: getUserIdFromURL(),  // Assuming you have this function defined
                     endpoint: endpoint,
                     p256dh: p256dh,
                     auth: auth
@@ -61,24 +52,19 @@
                 }).then(response => response.json())
                   .then(data => {
                     console.log('Subscription saved in Directus:', data);
-                  })
-                  .catch(error => {
+                  }).catch(error => {
                     console.error('Error saving subscription to Directus:', error);
                   });
               })
               .catch(function(error) {
                 console.error('Error during Service Worker registration or subscription:', error);
               });
-          } else {
-            console.error('Notification permission denied.');
           }
-        });
-      } else {
-        console.error('Service Worker or Notifications are not supported in this browser.');
-      }
-    } else {
-      console.error('User ID not found in the URL.');
-    }
+        } else {
+          console.log('Notification permission denied or dismissed.');
+        }
+      });
+    });
 
     // Helper function to convert VAPID public key from base64 to Uint8Array
     function urlBase64ToUint8Array(base64String) {
@@ -86,14 +72,17 @@
       const base64 = (base64String + padding)
         .replace(/\-/g, '+')
         .replace(/_/g, '/');
-
       const rawData = window.atob(base64);
       const outputArray = new Uint8Array(rawData.length);
-
       for (let i = 0; i < rawData.length; ++i) {
         outputArray[i] = rawData.charCodeAt(i);
       }
       return outputArray;
+    }
+
+    function getUserIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('user_id');  // Retrieve user_id from the URL
     }
   </script>
 </body>
