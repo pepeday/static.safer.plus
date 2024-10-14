@@ -1,9 +1,13 @@
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://static.safer.plus/sw.js')
-    .then(function(registration) {
-      console.log('Service Worker registered successfully.');
-    })
-    .catch(function(error) {
-      console.error('Service Worker registration failed:', error);
-    });
-}
+self.addEventListener('push', function(event) {
+  const data = event.data ? event.data.text() : 'No payload';
+
+  const options = {
+    body: data,
+    icon: 'icon.png',
+    badge: 'badge.png'
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('Push Notification', options)
+  );
+});
