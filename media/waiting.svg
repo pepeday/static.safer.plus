@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1024"
+   zoomAndPan="magnify"
+   viewBox="0 0 768 767.999994"
+   height="1024"
+   preserveAspectRatio="xMidYMid meet"
+   version="1.0"
+   id="svg8"
+   sodipodi:docname="waiting.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.0029297"
+     inkscape:cx="285.66309"
+     inkscape:cy="512.49853"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <path
+     d="M 0,384 C 0,596.07812 171.92188,768 384,768 596.07813,768 768,596.07812 768,384 768,171.92187 596.07813,0 384,0 171.92188,0 0,171.92187 0,384 Z"
+     id="path287"
+     style="fill:#ffffff" />
+  <path
+     fill="#fcc934"
+     d="M 384 768 C 596.078125 768 768 596.078125 768 384 C 768 171.921875 596.078125 0 384 0 C 171.921875 0 0 171.921875 0 384 C 0 596.078125 171.921875 768 384 768 Z M 290.90625 179.199219 C 229.214844 179.199219 179.199219 229.214844 179.199219 290.90625 L 179.199219 477.09375 C 179.199219 538.785156 229.214844 588.800781 290.90625 588.800781 L 477.09375 588.800781 C 538.785156 588.800781 588.800781 538.785156 588.800781 477.09375 L 588.800781 290.90625 C 588.800781 229.214844 538.785156 179.199219 477.09375 179.199219 Z M 365.382812 384 L 365.382812 253.671875 L 402.617188 253.671875 L 402.617188 365.382812 L 514.328125 365.382812 L 514.328125 402.617188 L 384 402.617188 C 373.714844 402.617188 365.382812 394.285156 365.382812 384 Z M 365.382812 384 "
+     fill-opacity="1"
+     fill-rule="evenodd"
+     id="path6" />
+  <path
+     d="M 365.38281,384"
+     id="path295" />
+</svg>
