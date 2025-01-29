@@ -1,0 +1,22 @@
+{
+    "name": "safer.plus",
+    "short_name": "safer+",
+    "id": "safer.plus",
+    "description": "Safer+ is a comprehensive health and safety management platform designed for businesses to streamline ISO 45001, ISO 9001, and ISO 14001 compliance. It offers risk assessments, incident reporting, audits, training tracking, and document management in a user-friendly interface. With multi-tenancy support and automated workflows, Safer+ helps organizations and consultants ensure workplace safety and regulatory compliance efficiently.",
+    "categories": ["business", "productivity"],
+    "theme_color": "#0f33c9",
+    "background_color": "#ffffff",
+    "icons": [
+      {
+        "src": "https://static.safer.plus/media/logo_site_192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "https://static.safer.plus/media/logo_site_512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
