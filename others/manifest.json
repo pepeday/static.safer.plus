@@ -6,6 +6,9 @@
     "categories": ["business", "productivity"],
     "theme_color": "#0f33c9",
     "background_color": "#ffffff",
+    "start_url": "https://safer.plus/admin/landing-page",
+    "scope": "https://safer.plus/",
+    "display": "standalone",
     "icons": [
       {
         "src": "https://static.safer.plus/media/logo_site_192.png",
